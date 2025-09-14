@@ -73,15 +73,15 @@ const Footer = () => {
             <div className="space-y-3">
               <div className="flex items-center space-x-3">
                 <Phone className="w-4 h-4 text-blue-400" />
-                <span className="text-sm">+233 (0) 302 123 456</span>
+                <span className="text-sm">0538841929</span>
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="w-4 h-4 text-blue-400" />
-                <span className="text-sm">info@credexmicro.com.gh</span>
+                <span className="text-sm">credexmicrocredit@gmail.com</span>
               </div>
               <div className="flex items-center space-x-3">
                 <MapPin className="w-4 h-4 text-blue-400" />
-                <span className="text-sm">Accra Financial District, Ghana</span>
+                <span className="text-sm">Kasoa, Central Region, Ghana</span>
               </div>
             </div>
           </div>

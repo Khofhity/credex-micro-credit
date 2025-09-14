@@ -204,12 +204,17 @@ const Contact = () => {
             </p>
             <div className="bg-blue-600 text-white rounded-lg p-4 mb-4">
               <MapPin className="w-8 h-8 mx-auto mb-2" />
-              <p className="font-medium">123 Independence Avenue</p>
-              <p className="text-sm opacity-75">Accra Financial District, Ghana</p>
+              <p className="font-medium">Kasoa</p>
+              <p className="text-sm opacity-75">Central Region, Ghana</p>
             </div>
-            <button className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors">
+            <a 
+              href="https://maps.app.goo.gl/MpfX6D4z5P1dfTmq5" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors inline-block"
+            >
               Get Directions
-            </button>
+            </a>
           </div>
 
           <div className="bg-gradient-to-br from-green-50 to-blue-50 rounded-2xl p-8">

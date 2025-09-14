@@ -24,15 +24,15 @@ const Header: React.FC<HeaderProps> = ({ onOpenAuth }) => {
           <div className="flex items-center space-x-6">
             <div className="flex items-center space-x-2">
               <Phone className="w-4 h-4" />
-              <span>+233 (0) 302 123 456</span>
+              <span>0538841929</span>
             </div>
             <div className="flex items-center space-x-2">
               <Mail className="w-4 h-4" />
-              <span>info@credexmicro.com.gh</span>
+              <span>credexmicrocredit@gmail.com</span>
             </div>
             <div className="flex items-center space-x-2">
               <MapPin className="w-4 h-4" />
-              <span>Accra Financial District, Ghana</span>
+              <span>Kasoa, Central Region, Ghana</span>
             </div>
           </div>
           <div className="text-blue-200">
