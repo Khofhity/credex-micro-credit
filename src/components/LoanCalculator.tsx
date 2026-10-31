@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Calculator, Info, TrendingUp, Calendar, DollarSign } from 'lucide-react';
 
 const LoanCalculator = () => {
@@ -10,13 +10,9 @@ const LoanCalculator = () => {
   const [totalInterest, setTotalInterest] = useState(0);
 
   useEffect(() => {
-    calculateLoan();
-  }, [loanAmount, interestRate, loanTerm]);
-
-  const calculateLoan = () => {
-    const principal = parseFloat(loanAmount);
-    const rate = parseFloat(interestRate) / 100 / 12;
-    const time = parseFloat(loanTerm);
+    const principal = loanAmount;
+    const rate = interestRate / 100 / 12;
+    const time = loanTerm;
 
     if (principal && rate && time) {
       const monthly = (principal * rate * Math.pow(1 + rate, time)) / (Math.pow(1 + rate, time) - 1);
@@ -27,7 +23,7 @@ const LoanCalculator = () => {
       setTotalPayment(total);
       setTotalInterest(interest);
     }
-  };
+  }, [loanAmount, interestRate, loanTerm]);
 
   const formatCurrency = (amount: number) => {
     return new Intl.NumberFormat('en-GH', {
