@@ -7,7 +7,6 @@ import {
   Bell, 
   Settings, 
   LogOut,
-  DollarSign,
   Calendar,
   FileText,
   Shield,

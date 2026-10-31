@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import Services from './components/Services';
@@ -23,7 +23,7 @@ function App() {
     if (savedUser) {
       try {
         setUser(JSON.parse(savedUser));
-      } catch (error) {
+      } catch {
         localStorage.removeItem('credex_user');
       }
     }

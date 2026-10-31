@@ -1,4 +1,3 @@
-import React from 'react';
 import { FileText, Search, CheckCircle, CreditCard } from 'lucide-react';
 
 const HowItWorks = () => {

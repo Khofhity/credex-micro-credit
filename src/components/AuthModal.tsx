@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { X, Eye, EyeOff, Shield, Lock, User as UserIcon, Mail, Phone, Calendar, MapPin } from 'lucide-react';
 import { User } from '../types/User';
 
+type StoredUser = User & { password: string };
+
 interface AuthModalProps {
   isOpen: boolean;
   onClose: () => void;
@@ -61,23 +63,25 @@ const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose, onLogin }) => {
     await new Promise(resolve => setTimeout(resolve, 1500));
 
     // Check stored users
-    const storedUsers = JSON.parse(localStorage.getItem('credex_users') || '[]');
-    const user = storedUsers.find((u: any) => 
+    const storedUsers: StoredUser[] = JSON.parse(localStorage.getItem('credex_users') || '[]');
+    const user = storedUsers.find((u) => 
       u.username === loginData.username && u.password === loginData.password
     );
 
     if (user) {
+      // Keep the stored password out of the session object
       const userData: User = {
         ...user,
         lastLogin: new Date().toISOString()
       };
-      
+      delete (userData as Partial<StoredUser>).password;
+
       // Update last login
-      const updatedUsers = storedUsers.map((u: any) => 
-        u.id === user.id ? userData : u
+      const updatedUsers = storedUsers.map((u) =>
+        u.id === user.id ? { ...u, lastLogin: userData.lastLogin } : u
       );
       localStorage.setItem('credex_users', JSON.stringify(updatedUsers));
-      
+
       onLogin(userData);
     } else {
       alert('Invalid username or password');
@@ -139,7 +143,7 @@ const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose, onLogin }) => {
     };
 
     // Store user
-    const storedUsers = JSON.parse(localStorage.getItem('credex_users') || '[]');
+    const storedUsers: StoredUser[] = JSON.parse(localStorage.getItem('credex_users') || '[]');
     storedUsers.push({ ...newUser, password: registerData.password });
     localStorage.setItem('credex_users', JSON.stringify(storedUsers));
 

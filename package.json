@@ -1,11 +1,21 @@
 {
-  "name": "vite-react-typescript-starter",
+  "name": "credex-micro-credit",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.1.0",
+  "description": "Micro-lending website and client-portal prototype built with React, TypeScript, Vite and Tailwind CSS",
+  "author": "Foster Yaw Tamakloe",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Khofhity/credex-micro-credit.git"
+  },
   "type": "module",
+  "engines": {
+    "node": ">=18"
+  },
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "typecheck": "tsc -p tsconfig.app.json --noEmit",
     "lint": "eslint .",
     "preview": "vite preview"
   },
